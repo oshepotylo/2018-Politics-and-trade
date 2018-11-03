@@ -1,5 +1,4 @@
 * need to keep only countires which are in my trade sample
-use "$Dropbox\data\pwt\pwt90.dta", clear
 
 rename countrycode code
 keep if year>=2000
@@ -41,6 +40,6 @@ spset fips, modify replace
 gen lngdp=ln(rgdpo)
 gen lnk=ln(ck)
 gen lnl=ln(emp)
-spxtregress lngdp rle pve hc lnk lnl, fe  dvarlag(Wc) errorlag(Wc) ivarlag(Wc: rle pve hc lnk lnl) force
-estat impact hc
-*spxtregress lngdp rle pve hc lnk lnl, re sarpanel noconstant  dvarlag(Wc) errorlag(Wc) ivarlag(Wc: rle pve hc lnk lnl) force
+spxtregress lngdp rle pve hc lnk lnl, fe  dvarlag(Wd) errorlag(Wd) force
+estat impact rle
+*spxtregress lngdp rle pve hc lnk lnl, re sarpanel noconstant  dvarlag(Wc) errorlag(Wc) force
