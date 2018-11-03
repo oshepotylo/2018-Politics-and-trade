@@ -1,5 +1,5 @@
 * need to keep only countires which are in my trade sample
-use "I:\Dropbox\data\pwt\pwt90.dta" , clear
+use "$Dropbox\data\pwt\pwt90.dta", clear
 
 rename countrycode code
 keep if year>=2000
